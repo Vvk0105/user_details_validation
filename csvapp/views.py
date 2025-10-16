@@ -12,7 +12,7 @@ class CsvUploadAPiView(APIView):
     def post(self, request):
         #get file
         file = request.FILES.get('file')
-
+        print(file)
         #check if the file is csv or not
         if not file or file.name.lower()[-4:] != '.csv':
             return Response({'error':'Please upload a csv file'}, status=status.HTTP_400_BAD_REQUEST)
