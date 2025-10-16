@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import csv
+from io import TextIOWrapper
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -22,8 +23,8 @@ class CsvUploadAPiView(APIView):
         errors = []
 
         #read csv file and convert binary stream to text
-        content = file.read().decode('utf-8')
-        reader = csv.DictReader(content)
+        decoded_file = TextIOWrapper(file.file, encoding='utf-8')
+        reader = csv.DictReader(decoded_file)
         
         #looping through each row except 1st because 1st row is the heading
         for id, row in enumerate(reader, start=2):
@@ -56,3 +57,6 @@ class CsvUploadAPiView(APIView):
             "rejected_count":rejected_count,
             "errors":errors 
         }, status=status.HTTP_200_OK) 
+    
+def upload_file(request):
+    return render(request, 'upload.html')
