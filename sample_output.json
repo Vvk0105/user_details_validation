@@ -1,0 +1,48 @@
+{
+    "saved_count": 2,
+    "rejected_count": 3,
+    "errors": [
+        {
+            "row": 3,
+            "errors": {
+                "email": [
+                    "Enter a valid email address."
+                ],
+                "age": [
+                    "Age must be between 0 and 120"
+                ]
+            },
+            "row_data": {
+                "name": "syam",
+                "email": "syam.com",
+                "age": "270"
+            }
+        },
+        {
+            "row": 4,
+            "errors": {
+                "age": [
+                    "Ensure this value is greater than or equal to 0."
+                ]
+            },
+            "row_data": {
+                "name": "arfan",
+                "email": "arfan@gmail.com",
+                "age": "-2"
+            }
+        },
+        {
+            "row": 5,
+            "errors": {
+                "email": [
+                    "Duplicate email"
+                ]
+            },
+            "data": {
+                "name": "vishal",
+                "email": "vivek@gmail.com",
+                "age": "22"
+            }
+        }
+    ]
+}

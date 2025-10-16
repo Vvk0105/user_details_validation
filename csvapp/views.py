@@ -34,7 +34,7 @@ class CsvUploadAPiView(APIView):
                 rejected_count += 1
                 errors.append({
                     "row":id, 
-                    "error":{"email":['Duplicate email']}, 
+                    "errors":{"email":['Duplicate email']}, 
                     "data":row
                 })
                 continue
